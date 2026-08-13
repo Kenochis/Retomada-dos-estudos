@@ -18,8 +18,10 @@ function randomNumber() {
 function verificarDicas(chute, numAleatorio) {
     if(chute > numAleatorio) {
         return console.log(`Seu chute precisa ser mais baixo!`);
+        
     } else {
         return console.log(`Seu chute precisa ser mais alto!`);
+
     }
 };
 
@@ -29,7 +31,9 @@ function iniciarJogo() {
     let totalChutes = 0;
 
     console.log("===> JOGO DE ADIVINHAÇÃO DE NÚMERO <===");
+
     rl.question("Antes de começar, qual seria seu nick? ", (nick) => {
+
         console.log(`Vamos lá então, ${nick}. Vou te explicar às regras do jogo:`);
         console.log(`Você tem apenas ${vidas} vidas. Cada vida equivale a 1 tentativa de número. Se chegar a 0 vidas, o jogo encerra e você perde!`);
         console.log(`Você terá dicas sobre cada tentativa (exemplo: mais baixo ou mais alto).`);
@@ -38,7 +42,8 @@ function iniciarJogo() {
         function tentativasDeChute(vidas, num, tentativas) {
             console.log(`Total de vidas: ${vidas}`)
 
-            if(vidas !== 0) { //Verifica se as vidas já acabaram, antes de continuar.
+            //Verifica se as vidas já acabaram, antes de continuar.
+            if(vidas !== 0) { 
                 rl.question(`Digite um número: `, (chute) => {
                     chute = Number(chute);
                 
@@ -57,34 +62,33 @@ function iniciarJogo() {
                         rl.question("Deseja jogar novamente?(s/n): ", (resposta) => {
                             if(resposta.toLowerCase() === "s") {
                                 iniciarJogo();
+
                             } else {
                                 console.log(`Obrigado por jogar. Encerrando o gamer...`);
                                 rl.close();
+
                             }
-
                         });
-
                     }
-
                 });
 
             } else {
                 console.log(`====> SUAS VIDAS ACABARAM E VOCÊ PERDEU O JOGO! <====`);
+
                 rl.question("Deseja jogar novamente?(s/n): ", (resposta) => {
                     if(resposta.toLowerCase() === "s") {
                         iniciarJogo();
+
                     } else {
                         console.log(`Obrigado por jogar. Encerrando o gamer...`);
                         rl.close();
+
                     }
                 });
             }
-
         };
         tentativasDeChute(vidas, numero, totalChutes);
-
     });
-
 };
 
 iniciarJogo();
