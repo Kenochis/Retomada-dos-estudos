@@ -21,3 +21,5 @@ tarefas.splice(2, 1, "Estudar Banco de Dados");
 tarefas.splice(2, 0, "Estudar APIs REST");
 
 console.log(tarefas);
+
+// Concluido
