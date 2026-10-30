@@ -24,3 +24,5 @@ const nomeDosSelecionados = inferiorATrezentos.map((produtoSelecionado) => {
 
 console.log(inferiorATrezentos);
 console.log(nomeDosSelecionados);
+
+// Concluido
