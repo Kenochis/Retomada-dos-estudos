@@ -1,12 +1,20 @@
 /*
-Quanto sobra depois da compra?
-O dinheiro é suficiente para comprar?
-O preço é igual a 90?
-O preço é diferente de 100?
-Adicione 50 ao dinheiro usando +=.
-Subtraia 20 usando -=.
-Descubra se dinheiro é maior e preco é menor que 100.
-Descubra se dinheiro é maior que 200 ou preco é menor que 100.
+    1. Quanto sobra depois da compra?
+
+    2. O dinheiro é suficiente para comprar?
+
+    3. O preço é igual a 90?
+
+    4. O preço é diferente de 100?
+
+    5. Adicione 50 ao dinheiro usando +=
+
+    6. Subtraia 20 usando -=
+
+    7. Descubra se dinheiro é maior e preco é menor que 100
+
+    8. Descubra se dinheiro é maior que 200 ou preco é menor que 100
+    
 */
 
 let dinheiro = 150;
