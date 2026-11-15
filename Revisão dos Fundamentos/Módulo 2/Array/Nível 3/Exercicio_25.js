@@ -20,14 +20,32 @@ let indexProdutos = 0;
 
 for (let i = 0; i < produtos.length; i++) {
     indexProdutos++;
-};
+}
 
 const produtosOrdemCrescente = produtos.slice(0, indexProdutos);
 
 produtosOrdemCrescente.sort((a, b) => {
-    return a - b;
+    return a.preco - b.preco;
 });
 
-console.log(produtosOrdemCrescente)
+console.log("Produtos em ordem Crescente: ");
+produtosOrdemCrescente.forEach((produto) => {
+    console.log(produto);
+});
 
-// Falta terminar...
+
+console.log("----------------------------------");
+
+
+const produtosOrdemDecrescente = produtos.slice(0, indexProdutos);
+
+produtosOrdemDecrescente.sort((a, b) => {
+    return b.preco - a.preco;
+});
+
+console.log("Produtos em ordem Decrescente: ");
+produtosOrdemDecrescente.forEach((produto) => {
+    console.log(produto);
+});
+
+// Concluido
