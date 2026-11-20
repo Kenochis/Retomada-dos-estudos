@@ -27,42 +27,32 @@ const alunos = [
     { nome: "Julia", notas: [4, 5, 6] }
 ];
 
-const notasAlunos = alunos.map((aluno) => {
-    return aluno.notas;
-});
-
-const mediaAlunos = notasAlunos.map((notas) => {
+const alunosComMedia = alunos.map((aluno) => { // Criando um novo array com a media dos alunos.
     let soma = 0;
 
-    for (const nota of notas) {
+    for (const nota of aluno.notas) {
         soma += nota;
     }
 
-    const media = soma / notas.length;
+    const media = Number((soma / aluno.notas.length).toFixed(2));
 
-    return Number(media.toFixed(2));
+    return {
+        nome: aluno.nome,
+        media: media
+    };
 });
 
-function aprovados (media, alunosGeral) {
-    let index = [];
+const listaDeAprovados = alunosComMedia.filter((aluno) => { // Filtrando alunos aprovados.
+    if (aluno.media >= 7){
+        return aluno;
+    }
+});
 
-    const indexAprovados = media.forEach((nota) => {
-        if (nota >= 7){
-            index.push(media.indexOf(nota));
-        }
-    })
-    
-    let nomeDosAprovados = [];
+listaDeAprovados.sort((a, b) => { // Ordenando a lista por media.
+    return b.media - a.media;
+})
 
-    const nomes = index.forEach((i) => {
-        nomeDosAprovados.push(alunosGeral[i]);
-    })
+console.log(listaDeAprovados); // mostrando o nome e a media de cada aluno aprovado.
 
-    return nomeDosAprovados;
-};
 
-let alunosAprovados = aprovados(mediaAlunos, alunos);
-
-console.log(alunosAprovados);
-
-// preciso substituir a nota dos alunos, pela a média delas..
+// Concluido
