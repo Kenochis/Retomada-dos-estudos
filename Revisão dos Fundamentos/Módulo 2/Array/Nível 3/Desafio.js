@@ -52,7 +52,6 @@ listaDeAprovados.sort((a, b) => { // Ordenando a lista por media.
     return b.media - a.media;
 })
 
-console.log(listaDeAprovados); // mostrando o nome e a media de cada aluno aprovado.
-
+const resultado = listaDeAprovados.forEach((aprovados) => console.log(aprovados)); // mostrando o nome e a media de cada aluno aprovado.
 
 // Concluido
